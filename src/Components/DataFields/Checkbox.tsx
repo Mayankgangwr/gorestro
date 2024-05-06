@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./DataFields.module.scss";
-import { Checkbox as CheckBox, Field, Input } from "@fluentui/react-components";
+import { Checkbox as CheckBox } from "@fluentui/react-components";
 
 interface ICheckboxProps {
     label?: string;
@@ -8,13 +8,13 @@ interface ICheckboxProps {
     value?: boolean | undefined;
     labelClassName?: any
     className?: any;
-    setValue?: (value: string, name: string) => void;
+    setValue: (value: string, name: string) => void;
     isDisable?: boolean;
     labelPosition?: "before" | "after";
 }
 
 const Checkbox: React.FC<ICheckboxProps> = (props) => {
-    const { name, label, value, labelClassName, className, setValue, isDisable, labelPosition = "before"
+    const { name, label, value, className, setValue, isDisable, labelPosition = "before"
     } = props;
 
     return (
@@ -26,9 +26,7 @@ const Checkbox: React.FC<ICheckboxProps> = (props) => {
             label={label}
             disabled={isDisable}
             onChange={(event: any, data: any) => {
-                console.log(event.target);
-                console.log(data.value)
-                // setValue(data.value, event.target.name)
+                setValue(data.checked, event.target.name)
             }}
         />
     );

@@ -1,8 +1,12 @@
+import { Outlet } from "react-router-dom";
 import { Login, SignUp } from "./Pages";
 
 export default function App() {
   return (
-      <Login />
+    <>
+      <header>Hello</header>
+      <Outlet />
+    </>
   )
 }
 

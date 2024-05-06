@@ -1,6 +1,7 @@
 import React from "react";
 import Styles from "./DataFields.module.scss";
 import { Field, Input } from "@fluentui/react-components";
+import { DismissRegular } from "@fluentui/react-icons";
 
 interface InputFieldProps {
     type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url' | 'date' | 'datetime-local' | 'month' | 'number' | 'time' | 'week';
@@ -10,7 +11,7 @@ interface InputFieldProps {
     labelClassName?: any
     className?: any;
     setValue: (value: string, name: string) => void;
-    clearValue?: () => void;
+    clearable?: boolean;
     isDisable?: boolean;
     error?: string;
     placeholder?: string;
@@ -18,9 +19,12 @@ interface InputFieldProps {
 }
 
 const InputField: React.FC<InputFieldProps> = (props) => {
-    const { type, name, label, value, labelClassName, className, setValue, clearValue, isDisable, error, placeholder, labelOrientation = "vertical"
+    const { type, name, label, value, labelClassName, className, setValue, clearable, isDisable, error, placeholder, labelOrientation = "vertical"
     } = props;
 
+    const clearValue = (name: string): void => {
+        setValue("", name);
+    }
     return (
         <Field
             label={label}
@@ -38,6 +42,11 @@ const InputField: React.FC<InputFieldProps> = (props) => {
                 }}
                 disabled={isDisable}
                 placeholder={placeholder}
+                contentAfter={
+                    (clearable &&  value && value?.length>0) ? <DismissRegular onClick={(event: any) => {
+                        clearValue(name)
+                    }} /> : null
+                }
             />
         </Field>
 

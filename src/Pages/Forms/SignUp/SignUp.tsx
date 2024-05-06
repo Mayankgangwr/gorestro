@@ -15,7 +15,7 @@ interface ISignUpState {
     pinCode: string;
 
 }
-const SignUp: React.FC<ISignUpProps> = (props) => {
+const SignUp: React.FC<ISignUpProps> = () => {
     const [register, setRegister] = React.useState<ISignUpState>({
         name: "",
         contact: "",
@@ -46,6 +46,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.name}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter restro name"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -57,6 +58,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.contact}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter contact no."
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -68,6 +70,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.email}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter email"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -79,6 +82,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.address}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter address"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -90,6 +94,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.country}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter country"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -101,6 +106,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.city}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter city"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -112,6 +118,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
                     value={register.pinCode}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter pin code"
+                    clearable
                 // labelOrientation="horizontal"
                 />
             </Form>

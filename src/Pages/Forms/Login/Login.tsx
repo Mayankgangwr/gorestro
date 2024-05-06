@@ -10,7 +10,7 @@ interface ILoinState {
     username: string;
     password: string;
 }
-const Login: React.FC<ILoinProps> = (props) => {
+const Login: React.FC<ILoinProps> = () => {
     const [user, setUser] = React.useState<ILoinState>({
         username: "",
         password: "",
@@ -36,6 +36,7 @@ const Login: React.FC<ILoinProps> = (props) => {
                     value={user.username}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter username"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -47,10 +48,11 @@ const Login: React.FC<ILoinProps> = (props) => {
                     value={user.password}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter password"
+                    clearable
                 // labelOrientation="horizontal"
                 />
                 <Flex className="mt-4">
-                    <Checkbox label={`Remember me`} labelPosition="after" />
+                    <Checkbox label={`Remember me`} labelPosition="after" setValue={(value: string, name: string) => { }} />
                     <Link className={Styles.link} href={'/forgotpassword'}>Forgot password?</Link>
                 </Flex>
             </Form>
