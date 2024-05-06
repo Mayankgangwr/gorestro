@@ -1,7 +1,8 @@
 import React from "react";
 import Styles from "./Login.module.scss";
 import { Flex, Form, InputField, Checkbox } from "../../../Components";
-import { Link } from "@fluentui/react-components";
+import { Link } from "react-router-dom";
+
 
 interface ILoinProps {
 
@@ -55,7 +56,7 @@ const Login: React.FC<ILoinProps> = () => {
                     <Checkbox label={`Remember me`} labelPosition="after" setValue={(value: string, name: string) => {
                         console.log(value, name);
                     }} />
-                    <Link className={Styles.link} href={'/forgotpassword'}>Forgot password?</Link>
+                    <Link className={Styles.link} to={'/forgotpassword'}>Forgot password?</Link>
                 </Flex>
             </Form>
         </div>

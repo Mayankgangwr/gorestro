@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Styles from "./Form.module.scss";
-import { Button, Link } from "@fluentui/react-components";
+import { Button } from "@fluentui/react-components";
+import { Link } from "react-router-dom";
 import { Flex } from "..";
 import { JustifyContent } from "../Flex/Flex";
 
@@ -21,8 +22,8 @@ const Form: FC<IFormProps> = ({ onSubmit, formHeader, buttonText, authLink, chil
                 {buttonText && <Button type="submit" className={Styles.formButton}>Submit</Button>}
                 {authLink && (
                     <Flex className="mt-1" justifyContent={JustifyContent.CENTER}>
-                        {authLink === "login" && <span>Already have an account? <Link className={Styles.link} href='/login'>Login</Link></span>}
-                        {authLink === "signup" && <span>Don't have an account? <Link className={Styles.link} href="/signup">Sign up</Link></span>}
+                        {authLink === "login" && <span>Already have an account? <Link className={Styles.link} to='/login'>Login</Link></span>}
+                        {authLink === "signup" && <span>Don't have an account? <Link className={Styles.link} to="/signup">Sign up</Link></span>}
                     </Flex>
                 )}
 

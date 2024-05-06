@@ -20,20 +20,19 @@ const router = createBrowserRouter([
           <Login />
         </AuthLayout>
       },
-      {
-        path: '/login',
-        element: <AuthLayout authentication={false}>
-          <Login />
-        </AuthLayout>
-      },
-      {
-        path: '/signup',
-        element: <AuthLayout authentication={false}>
-          <SignUp />
-        </AuthLayout>
-      }
-
     ]
+  },
+  {
+    path: '/login',
+    element: <AuthLayout authentication={false}>
+      <Login />
+    </AuthLayout>
+  },
+  {
+    path: '/signup',
+    element: <AuthLayout authentication={false}>
+      <SignUp />
+    </AuthLayout>
   }
 ]);
 ReactDOM.createRoot(document.getElementById('root')!).render(
