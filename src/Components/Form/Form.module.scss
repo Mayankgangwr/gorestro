@@ -1,0 +1,16 @@
+.container {
+    @apply h-[100vh] flex justify-center;
+    background: rgb(136, 89, 245);
+    background: radial-gradient(circle, rgba(136, 89, 245, 1) 0%, rgba(146, 98, 243, 1) 32%, rgba(142, 105, 241, 1) 56%, rgba(146, 117, 238, 1) 100%);
+
+    >form {
+        @apply bg-white mt-[100px] w-96 h-fit p-4 pb-10 shadow-indigo-500/40 rounded-md;
+
+        >.formHeader {
+            @apply text-slate-900 tracking-tight font-sans text-3xl font-extrabold mt-2 mb-5 text-center;
+        }
+        >.formButton{
+            @apply rounded-[4px] w-full my-4 text-[#ffffff] font-normal bg-blue-500;
+        }
+    }
+}
