@@ -52,7 +52,9 @@ const Login: React.FC<ILoinProps> = () => {
                 // labelOrientation="horizontal"
                 />
                 <Flex className="mt-4">
-                    <Checkbox label={`Remember me`} labelPosition="after" setValue={(value: string, name: string) => { }} />
+                    <Checkbox label={`Remember me`} labelPosition="after" setValue={(value: string, name: string) => {
+                        console.log(value, name);
+                    }} />
                     <Link className={Styles.link} href={'/forgotpassword'}>Forgot password?</Link>
                 </Flex>
             </Form>

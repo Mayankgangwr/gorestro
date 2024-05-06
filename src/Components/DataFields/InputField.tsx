@@ -43,7 +43,7 @@ const InputField: React.FC<InputFieldProps> = (props) => {
                 disabled={isDisable}
                 placeholder={placeholder}
                 contentAfter={
-                    (clearable &&  value && value?.length>0) ? <DismissRegular onClick={(event: any) => {
+                    (clearable &&  value && value?.length>0) ? <DismissRegular onClick={() => {
                         clearValue(name)
                     }} /> : null
                 }

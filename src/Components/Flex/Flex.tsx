@@ -1,6 +1,6 @@
 import React from 'react';
 
-enum JustifyContent {
+export enum JustifyContent {
     NORMAL = 'normal',
     END = 'end',
     START = 'start',
@@ -10,19 +10,19 @@ enum JustifyContent {
     EVENLY = 'evenly',
     STRETCH = 'stretch',
 }
-enum AlignItems {
+export enum AlignItems {
     END = 'end',
     START = 'start',
     CENTER = 'center',
     BASELINE = 'baseline',
     STRETCH = 'stretch',
 }
-enum FlexDirection {
+export enum FlexDirection {
     ROW = 'row',
     COLUMN = 'column'
 }
 
-enum FlexWrap {
+export enum FlexWrap {
     WRAP = 'wrap',
     REVERSE = 'reverse',
     NOWRAP = 'nowrap'
