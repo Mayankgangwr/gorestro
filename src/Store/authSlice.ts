@@ -1,35 +1,38 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface UserData {
-    name: string;
-    email: string;
+    id: string | null;
+    name: string | null;
+    email: string | null;
+    avatar: string | null;
+    role: string | null;
 }
 
 interface AuthState {
     status: boolean;
     userData: UserData | null;
-    role: string;
+    accessToken: string | null;
 }
 
 const initialState: AuthState = {
     status: false,
     userData: null,
-    role: "guest",
+    accessToken: null,
 };
 
 const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        login: (state, action: PayloadAction<{ userdata: UserData; role: string }>) => {
+        login: (state, action: PayloadAction<{ userdata: UserData; accessToken: string }>) => {
             state.status = true;
             state.userData = action.payload.userdata;
-            state.role = action.payload.role;
+            state.accessToken = action.payload.accessToken;
         },
         logout: (state) => {
             state.status = false;
             state.userData = null;
-            state.role = "guest";
+            state.accessToken = null;
         },
     },
 });
