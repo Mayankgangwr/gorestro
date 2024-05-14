@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Styles from "./Button.module.scss";
 import { Button as UIButton } from "@fluentui/react-components";
 import type { ButtonProps } from "@fluentui/react-components";

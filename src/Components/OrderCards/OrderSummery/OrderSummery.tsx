@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import Styles from "./OrderSummery.module.scss";
-import Flex, { AlignItems, FlexDirection, JustifyContent } from "../../Flex/Flex";
-import moment from "moment";
+import Flex, { AlignItems, FlexDirection } from "../../Flex/Flex";
 import { IFoodCard } from "../../FoodCard/FoodCard";
 import Button from "../../Buttons/Button";
 interface IOrderSummeryProps {
@@ -12,7 +11,6 @@ interface IOrderSummeryProps {
 
 const OrderSummery: FC<IOrderSummeryProps> = ({
     className = "",
-    onClick,
     items = []
 }) => {
     const [paymentSummery, setPaymentSummery] = useState({

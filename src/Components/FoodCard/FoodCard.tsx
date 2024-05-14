@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Styles from "./FoodCard.module.scss";
 import Flex, { AlignItems, FlexDirection } from "../Flex/Flex";
 import { Persona } from "@fluentui/react-components";
@@ -15,7 +15,7 @@ interface IFoodCardProps extends IFoodCard {
     onClick?: () => void;
 }
 
-const FoodCard: FC<IFoodCardProps> = ({ className = '', onClick, id, title, image, additionalText, items, price }) => {
+const FoodCard: FC<IFoodCardProps> = ({ className = '', onClick, title, additionalText, items, price }) => {
     return (
         <Flex className={`${Styles.ItemBox} ${className}`} onClick={() => onClick && onClick()} alignItems={AlignItems.START}>
             <Persona size="huge" name={title} textAlignment="center" secondaryText={additionalText} />

@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import Styles from "./Table.module.scss";
 import { Avatar, Menu, MenuItem, MenuList, MenuPopover, MenuTrigger, PresenceBadgeStatus, Table, TableBody, TableCell, TableCellLayout, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
 import { IEmployee } from "../../../Models";

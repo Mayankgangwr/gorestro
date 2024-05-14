@@ -1,7 +1,6 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Styles from "./CurrentOrderCard.module.scss";
-import Flex, { AlignItems, FlexDirection, JustifyContent } from "../../Flex/Flex";
-import { Persona } from "@fluentui/react-components";
+import Flex, { AlignItems, FlexDirection } from "../../Flex/Flex";
 import FoodCard, { IFoodCard } from "../../FoodCard/FoodCard";
 import OrderSummery from "../OrderSummery/OrderSummery";
 
@@ -80,12 +79,9 @@ interface ICurrentOrderCardProps {
 
 const CurrentOrderCard: FC<ICurrentOrderCardProps> = ({
     className = "",
-    onClick,
     id,
     username,
     tableNo,
-    items = [],
-    amount,
     status,
     acceptedBy
 

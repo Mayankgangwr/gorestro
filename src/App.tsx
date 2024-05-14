@@ -1,5 +1,5 @@
 
-import { FluentProvider, webLightTheme, webDarkTheme } from '@fluentui/react-components';
+import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./Components";
 import AuthLayout from "./Components/AuthLayout/AuthLayout";

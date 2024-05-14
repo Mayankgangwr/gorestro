@@ -1,4 +1,3 @@
-import React from "react";
 import Styles from "./Layout.module.scss";
 import DesktopHeader from "./DesktopLayout/DesktopHeader";
 import MobileHeader from "./MobileLayout/MobileHeader";

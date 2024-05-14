@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Styles from "./OverviewCard.module.scss";
 import { SettingsRegular, SettingsFilled, ArrowSortUpRegular, ArrowSortDownRegular } from "@fluentui/react-icons";
 import Flex, { AlignItems, FlexDirection, JustifyContent } from "../../Flex/Flex";

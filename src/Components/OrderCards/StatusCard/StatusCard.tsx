@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Styles from "./StatusCard.module.scss";
-import Flex, { AlignItems, FlexDirection, JustifyContent } from "../../Flex/Flex";
+import Flex, { AlignItems, JustifyContent } from "../../Flex/Flex";
 import moment from "moment";
 export interface IStatusCard {
     id?: string;
@@ -25,9 +25,7 @@ const StatusCard: FC<IStatusCardProps> = ({
     tableNo,
     items,
     amount,
-    status,
-    acceptedBy
-}) => {
+    status}) => {
     return (
         <div
             className={`${Styles.OrderDetails} ${className} ${status === "pending" ? `${Styles.IsPending}` : status === "progress" ? `${Styles.IsProgress}` : status === "completed" ? `${Styles.IsCompleted}` : ``}`}
