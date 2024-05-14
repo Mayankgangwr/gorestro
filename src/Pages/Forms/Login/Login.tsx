@@ -2,42 +2,72 @@ import React from "react";
 import Styles from "./Login.module.scss";
 import { Flex, Form, InputField, Checkbox } from "../../../Components";
 import { Link } from "react-router-dom";
+import validation from "../../../Utils/Validations/Validation";
 
 
-interface ILoinProps {
+interface ILoginProps {
 
 }
-interface ILoinState {
+interface ILoginState {
     username: string;
     password: string;
 }
-const Login: React.FC<ILoinProps> = () => {
-    const [user, setUser] = React.useState<ILoinState>({
+const Login: React.FC<ILoginProps> = () => {
+    const [user, setUser] = React.useState<ILoginState>({
+        username: "",
+        password: "",
+    });
+    const [error, setErorr] = React.useState<ILoginState>({
         username: "",
         password: "",
     });
 
-    const handleChange = (value: string, name: string) => {
+    const handleChange = async (value: string, name: string) => {
+        let err = "";
+        await validation.fieldValidation(value, name).then((res: string) => {
+            err = res;
+        });
+        setErorr({ ...error, [name]: err });
         setUser({ ...user, [name]: value });
     };
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
+        debugger;
+        const keys = Object.keys(error) as (keyof ILoginState)[];
+
+        const validationPromises = keys.map(async (key) => {
+            const err = await validation.fieldValidation(user[key], key);
+            setErorr((prevError) => ({ ...prevError, [key]: err }));
+            return err;
+        });
+        const errors = await Promise.all(validationPromises);
+        const isError = errors.some((err) => err !== "");
+        if (isError) {
+            return;
+        }
         alert(user.username);
     };
 
+
+
+    const hasError = (): boolean => {
+        const keys = Object.keys(error) as (keyof ILoginState)[];
+        return keys.some(key => user[key] === "") || keys.some(key => error[key] !== "");
+    };
+    console.log(error.username)
     return (
         <div>
-            <Form onSubmit={handleSubmit} formHeader="Login" buttonText="Login" authLink="signup">
+            <Form onSubmit={handleSubmit} formHeader="Login" buttonText="Login" authLink="signup" hasError={hasError()}>
                 <InputField
                     type="text"
                     name="username"
                     label="Username:"
                     className={Styles.inputField}
-                    labelClassName={Styles.userLabel}
                     value={user.username}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter username"
                     clearable
+                    error={error.username}
                 // labelOrientation="horizontal"
                 />
                 <InputField
@@ -45,11 +75,11 @@ const Login: React.FC<ILoinProps> = () => {
                     name="password"
                     label="Password:"
                     className={Styles.inputField}
-                    labelClassName={Styles.userLabel}
                     value={user.password}
                     setValue={(value: string, name: string) => handleChange(value, name)}
                     placeholder="Enter password"
                     clearable
+                    error={error.password}
                 // labelOrientation="horizontal"
                 />
                 <Flex className="mt-4">

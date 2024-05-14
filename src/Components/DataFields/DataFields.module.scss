@@ -22,7 +22,11 @@
 
         >input {
             @apply text-gray-950 border-none rounded-[4px];
+            background-color: #ebebeb;
         }
+    }
+    >div{
+        @apply text-red-700 text-[13px]
     }
 }
 

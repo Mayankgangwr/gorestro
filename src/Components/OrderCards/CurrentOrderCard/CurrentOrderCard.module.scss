@@ -1,0 +1,57 @@
+.Card {
+    @apply shadow-md shadow-gray-200 px-4 pt-2 pb-5 h-auto w-full bg-white rounded-lg;
+
+    >.Username {
+        @apply block text-xl text-center font-semibold pb-2;
+    }
+
+    >.OrderDetails {
+        @apply shadow-md shadow-gray-200 p-2 pb-5 h-[90px] w-full bg-gray-100 rounded-lg;
+
+        >.Header {
+
+            >.Id {}
+
+            >.TableNo {
+                @apply p-1 bg-gray-200 rounded-lg;
+
+            }
+        }
+
+        >.Footer {
+            @apply pt-1;
+
+            >div {
+                >.AcceptedBy {
+                    @apply block text-sm text-gray-500 font-normal;
+                }
+
+                >.AcceptedByName {
+                    @apply block text-base font-semibold;
+                }
+            }
+
+            >.Status {
+                @apply block text-[12px] text-gray-900 font-normal px-2 py-[2px] rounded-lg shadow-md shadow-gray-200;
+
+                line-height: 16px;
+            }
+        }
+    }
+
+    >.ItemBox {
+        @apply shadow-md shadow-gray-200 p-2 pb-5 mb-2 h-[70px] w-full bg-gray-100 rounded-lg;
+
+        >.ItemsAndAmount {
+            @apply h-14;
+
+            >.Amount {
+                @apply block text-base font-semibold;
+            }
+
+            >.Items {
+                @apply block text-base font-normal;
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+[
+    {
+        "id": "1",
+        "name": "John Doe",
+        "position": "Developer",
+        "phoneNumber": "123-456-7890",
+        "image": "john.jpg",
+        "dob": "1990-01-01",
+        "aadharCard": "1234 5678 9012",
+        "bank": {
+            "name": "Sample Bank",
+            "accountNo": "1234567890",
+            "ifsc": "ABCD0123456",
+            "branch": "Sample Branch"
+        },
+        "panCard": "ABCDE1234F",
+        "shift": "Day",
+        "isLoggedIn": "offline",
+        "loggedAt": "2024-05-13T10:00:00",
+        "loggedOut": "2024-05-13T20:00:00"
+    },
+    {
+        "id": "2",
+        "name": "Jane Smith",
+        "position": "Designer",
+        "phoneNumber": "987-654-3210",
+        "image": "jane.jpg",
+        "dob": "1995-05-15",
+        "aadharCard": "9876 5432 1098",
+        "bank": {
+            "name": "Another Bank",
+            "accountNo": "9876543210",
+            "ifsc": "WXYZ9876543",
+            "branch": "Another Branch"
+        },
+        "panCard": "FGHIJ5678K",
+        "shift": "Night",
+        "isLoggedIn": "available",
+        "loggedAt": "2024-05-13T09:00:00",
+        "loggedOut": ""
+    },
+    {
+        "id": "3",
+        "name": "Alice Johnson",
+        "position": "Manager",
+        "phoneNumber": "456-789-0123",
+        "image": "alice.jpg",
+        "dob": "1985-10-20",
+        "aadharCard": "4567 8901 2345",
+        "bank": {
+            "name": "Bank of Dreams",
+            "accountNo": "4567890123",
+            "ifsc": "EFGH4567890",
+            "branch": "Dream Branch"
+        },
+        "panCard": "LMNOP6789Q",
+        "shift": "Day",
+        "isLoggedIn": "offline",
+        "loggedAt": "2024-05-13T11:00:00",
+        "loggedOut": "2024-05-13T20:00:00"
+    },
+    {
+        "id": "4",
+        "name": "Michael Brown",
+        "position": "Accountant",
+        "phoneNumber": "789-012-3456",
+        "image": "michael.jpg",
+        "dob": "1980-03-25",
+        "aadharCard": "7890 1234 5678",
+        "bank": {
+            "name": "Financial Bank",
+            "accountNo": "7890123456",
+            "ifsc": "IJKL7890123",
+            "branch": "Financial Branch"
+        },
+        "panCard": "QRSTU1234V",
+        "shift": "Night",
+        "isLoggedIn": "available",
+        "loggedAt": "2024-05-13T12:00:00",
+        "loggedOut": ""
+    },
+    {
+        "id": "5",
+        "name": "Emily Wilson",
+        "position": "HR Manager",
+        "phoneNumber": "234-567-8901",
+        "image": "emily.jpg",
+        "dob": "1992-08-12",
+        "aadharCard": "2345 6789 0123",
+        "bank": {
+            "name": "People's Bank",
+            "accountNo": "2345678901",
+            "ifsc": "MNOP2345678",
+            "branch": "People's Branch"
+        },
+        "panCard": "WXYZA5678B",
+        "shift": "Day",
+        "isLoggedIn": "offline",
+        "loggedAt": "2024-05-13T08:00:00",
+        "loggedOut": "2024-05-13T19:00:00"
+    }
+]

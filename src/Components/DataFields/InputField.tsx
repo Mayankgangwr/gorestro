@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from "./DataFields.module.scss";
 import { Field, Input } from "@fluentui/react-components";
-import { DismissRegular } from "@fluentui/react-icons";
+import { DismissRegular, SearchRegular } from "@fluentui/react-icons";
 
 interface InputFieldProps {
     type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url' | 'date' | 'datetime-local' | 'month' | 'number' | 'time' | 'week';
@@ -19,7 +19,7 @@ interface InputFieldProps {
 }
 
 const InputField: React.FC<InputFieldProps> = (props) => {
-    const { type, name, label, value, labelClassName, className, setValue, clearable, isDisable, error, placeholder, labelOrientation = "vertical"
+    const { type, name, label, value, className, setValue, clearable, isDisable, error, placeholder, labelOrientation = "vertical"
     } = props;
 
     const clearValue = (name: string): void => {
@@ -30,12 +30,11 @@ const InputField: React.FC<InputFieldProps> = (props) => {
             label={label}
             orientation={labelOrientation}
             hint={error}
-            className={`${Styles.InputField} ${labelOrientation === "horizontal" && Styles.horizontalLabelInputField} ${labelClassName}`}
+            className={`${Styles.InputField} ${labelOrientation === "horizontal" && Styles.horizontalLabelInputField} ${className}`}
         >
             <Input
                 name={name}
                 type={type}
-                className={className}
                 value={value}
                 onChange={(event: any, data: { value: string }) => {
                     setValue(data.value, event.target.name)
@@ -43,9 +42,14 @@ const InputField: React.FC<InputFieldProps> = (props) => {
                 disabled={isDisable}
                 placeholder={placeholder}
                 contentAfter={
-                    (clearable &&  value && value?.length>0) ? <DismissRegular onClick={() => {
+                    type === "search" ? (clearable && value && value?.length > 0) ? <DismissRegular onClick={() => {
                         clearValue(name)
-                    }} /> : null
+                    }} /> :
+                        <SearchRegular onClick={() => {
+                            clearValue(name)
+                        }} /> : (clearable && value && value?.length > 0) ? <DismissRegular onClick={() => {
+                            clearValue(name)
+                        }} /> : null
                 }
             />
         </Field>

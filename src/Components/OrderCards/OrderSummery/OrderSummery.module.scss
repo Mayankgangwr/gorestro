@@ -1,0 +1,39 @@
+.OrderSummery {
+    @apply shadow-md shadow-gray-200 p-2 mt-2 w-full bg-gray-100 rounded-lg;
+}
+
+.SummeryDetails {
+    .Labels {
+        @apply w-16;
+
+        >span {
+            @apply pt-2 px-2 text-gray-600;
+        }
+    }
+
+    .DataValues {
+        @apply w-16;
+
+        >span {
+            @apply pt-2 px-2 font-medium;
+        }
+    }
+}
+
+.TotalAmount {
+    .Label {
+        @apply pt-2 px-2 text-gray-600 w-16;
+    }
+
+    .DataValue {
+        @apply pt-2 px-2 font-medium w-16;
+    }
+}
+
+.TransactionsButton button {
+    @apply bg-[#ffc107] rounded-lg;
+
+    &:hover {
+        @apply bg-[#c4a753];
+    }
+}

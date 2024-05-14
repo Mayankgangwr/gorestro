@@ -1,0 +1,39 @@
+.Card {
+    @apply shadow-md shadow-gray-200 p-4 pb-5 h-[140px] w-full bg-white rounded-lg;
+
+    >.Header {
+        >.Icon {
+            @apply bg-[#dfdfdf] p-[5px] rounded-md;
+        }
+
+        >.Title {
+            @apply w-[82%] text-xl font-semibold;
+        }
+    }
+
+    >.Content {
+        @apply pl-[18%] h-[73px];
+
+        >.Title {
+            @apply text-3xl font-medium;
+        }
+
+        >.Description {
+            @apply text-gray-500 text-xs font-normal inline;
+        }
+    }
+
+    &.ActiveCard {
+        @apply bg-[#879fff];
+
+        .Header .Icon {
+            @apply bg-gray-100;
+        }
+
+        .Header .Title,
+        .Content .Title,
+        .Content .Description {
+            @apply text-gray-100;
+        }
+    }
+}

@@ -36,6 +36,7 @@ interface FlexProps {
     alignItems?: AlignItems;
     flexWrap?: FlexWrap;
     className?: string;
+    onClick?: () => void;
     children: React.ReactNode;
 }
 
@@ -74,11 +75,13 @@ const Flex: React.FC<FlexProps> = ({
     alignItems = AlignItems.CENTER,
     flexWrap = FlexWrap.NOWRAP,
     className = '',
+    onClick,
     children
 }) => {
-    console.log(justifyContent)
     return (
-        <div className={`flex ${flexDirectionClasses[direction]} ${justifyContentClasses[justifyContent]} ${alignItemsClasses[alignItems]} ${flexWrapClasses[flexWrap]} ${className}`}>
+        <div
+            onClick={() => onClick && onClick()}
+            className={`flex ${flexDirectionClasses[direction]} ${justifyContentClasses[justifyContent]} ${alignItemsClasses[alignItems]} ${flexWrapClasses[flexWrap]} ${className}`}>
             {children}
         </div>
     );

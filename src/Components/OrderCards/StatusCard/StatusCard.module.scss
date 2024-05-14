@@ -1,0 +1,66 @@
+.OrderDetails {
+    @apply shadow-md shadow-gray-200 p-2 mt-2 w-full bg-gray-100 rounded-lg;
+
+    >.Header {
+        >.Id {
+            @apply flex items-center;
+            line-height: 0%;
+
+            >.TableNo {
+                @apply block text-[12px] font-normal ml-2 px-2 py-[2px] rounded-lg bg-[#ffb325];
+                line-height: 16px;
+            }
+        }
+
+        >.Items {
+            @apply block text-base font-normal;
+        }
+
+    }
+
+    >.Footer {
+        @apply pt-3;
+
+        >div {
+            >.OrderdBy {
+                @apply block text-sm text-gray-500 font-normal;
+            }
+
+            >.OrderByName {
+                @apply block text-base font-semibold;
+                >.Time{
+                    @apply text-gray-900 pl-1;
+                    font-size: 12px !important;
+                    font-weight: 400 !important;
+                    line-height: 1rem !important;
+                }
+            }
+        }
+
+        >.Amount {
+            @apply block text-base font-semibold;
+        }
+    }
+}
+.IsProgress {
+    @apply bg-orange-400;
+}
+
+.IsCompleted {
+    @apply bg-[#879fff];
+    
+}
+
+.IsPending,
+.IsProgress,
+.IsCompleted {
+    >.Header {
+        .Id .TableNo {
+            @apply text-black shadow-none bg-[#ffb325];
+        }
+    }
+
+    >.Footer div .OrderdBy {
+        @apply text-gray-900;
+    }
+}

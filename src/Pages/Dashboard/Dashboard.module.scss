@@ -1,0 +1,10 @@
+.PendingOrders,
+.ProgressOrders,
+.CompletedOrders,
+.TeamsTable {
+    @apply shadow-md shadow-gray-200 px-4 pt-2 pb-5 mt-5 h-auto w-full bg-white rounded-lg;
+    >.OrderStatus{
+            @apply block text-xl text-center font-semibold;
+    }
+}
+

@@ -1,7 +1,9 @@
 import React from "react";
-
-const Container: React.FC<any> = ({ children }) => {
-    return <div className=" w-full max-w-7xl mx-auto px-4">{children}</div>;
-
+interface IContainer{
+    children: React.ReactNode;
+    className?: any;
+}
+const Container: React.FC<IContainer> = ({ children, className}) => {
+    return <div className={`w-full h-[100vh] bg-[#eff3f4] pt-5 px-5 ${className}`}>{children}</div>;
 }
 export default Container;
