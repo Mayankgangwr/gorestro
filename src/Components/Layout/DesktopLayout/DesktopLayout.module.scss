@@ -1,6 +1,6 @@
 //Styling for header
 .Container {
-    @apply px-5 pt-2;
+    @apply px-1 md:px-2 lg:px-3 xl:px-4 pt-2;
     background-color: #eff3f4;
 
 }
@@ -14,7 +14,7 @@
 
 .Time {
     @apply text-gray-500;
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 400 !important;
     line-height: 1.75rem !important;
 }

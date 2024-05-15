@@ -1,3 +1,7 @@
-.Container{
-    @apply w-full h-[250px];
+.Container {
+    @apply w-full ;
+
+    >.TableBorder {
+        @apply border border-[#e5e7eb] pt-3 rounded-md;
+    }
 }

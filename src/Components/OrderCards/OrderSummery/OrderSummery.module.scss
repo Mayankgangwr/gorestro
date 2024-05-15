@@ -4,7 +4,7 @@
 
 .SummeryDetails {
     .Labels {
-        @apply w-16;
+        @apply w-20;
 
         >span {
             @apply pt-2 px-2 text-gray-600;
@@ -12,7 +12,7 @@
     }
 
     .DataValues {
-        @apply w-16;
+        @apply w-20;
 
         >span {
             @apply pt-2 px-2 font-medium;
@@ -22,11 +22,11 @@
 
 .TotalAmount {
     .Label {
-        @apply pt-2 px-2 text-gray-600 w-16;
+        @apply px-2 text-gray-600 w-20;
     }
 
     .DataValue {
-        @apply pt-2 px-2 font-medium w-16;
+        @apply px-2 font-medium w-20;
     }
 }
 

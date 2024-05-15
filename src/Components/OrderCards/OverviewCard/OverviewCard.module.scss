@@ -1,5 +1,5 @@
 .Card {
-    @apply shadow-md shadow-gray-200 p-4 pb-5 h-[140px] w-full bg-white rounded-lg;
+    @apply shadow-md shadow-gray-200 p-2 md:p-[10px] lg:p-3 xl:p-4 h-[140px] w-full bg-white rounded-lg;
 
     >.Header {
         >.Icon {
@@ -25,6 +25,7 @@
 
     &.ActiveCard {
         @apply bg-[#879fff];
+        background-color: #006be9 !important;
 
         .Header .Icon {
             @apply bg-gray-100;
@@ -36,4 +37,31 @@
             @apply text-gray-100;
         }
     }
+}
+.MobleCard{
+    @apply shadow-md shadow-gray-200 p-2 md:p-[10px] lg:p-3 xl:p-4 h-fit w-full bg-white rounded-lg;
+    >.Header {
+        @apply text-gray-600 text-xs font-normal pb-2;
+    }
+    >.Content {
+        @apply gap-2 inline;
+        >.Title {
+            @apply text-xl  pr-1 font-medium text-blue-500;
+            line-height: 1.875rem !important;
+        }
+
+        >.Description {
+            @apply text-sm;
+        }
+    }
+    &.ActiveCard {
+        @apply bg-[#879fff];
+        background-color: #006be9 !important;
+        >.Header,
+        .Content .Title,
+        .Content .Description {
+            @apply text-gray-100;
+        }
+    }
+
 }

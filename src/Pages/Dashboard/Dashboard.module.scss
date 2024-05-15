@@ -3,8 +3,67 @@
 .CompletedOrders,
 .TeamsTable {
     @apply shadow-md shadow-gray-200 px-4 pt-2 pb-5 mt-5 h-auto w-full bg-white rounded-lg;
-    >.OrderStatus{
-            @apply block text-xl text-center font-semibold;
+
+    >.OrderStatus {
+        @apply block text-xl text-center font-semibold;
+    }
+
+    >div {
+        @apply pb-3 pt-2;
+
+        >.Header {
+            @apply text-2xl font-semibold;
+        }
+
+        >div {
+            >.SearchField {
+                margin-bottom: 0 !important;
+                height: 32px !important;
+
+                >span {
+                    background-color: #dfdfdf !important;
+                    border-radius: 15px !important;
+
+                    >input {
+                        background-color: inherit !important;
+                        border-radius: inherit !important;
+
+                        &:focus,
+                        ::after {
+                            border-bottom: none !important;
+                        }
+                    }
+
+                    &::after {
+                        border-bottom: none !important;
+                    }
+                }
+            }
+
+            >.AddMember {
+                @apply mt-0;
+
+                >button {
+                    @apply bg-[#006be9] rounded-[6px];
+                }
+            }
+        }
+
     }
 }
-
+.TeamsTable{
+    @apply hidden lg:block;
+}
+.Tabs {
+    @apply h-8;
+    padding-left: 0.25rem/* 4px */ !important;
+    padding-right: 0.25rem/* 4px */ !important;
+    &::after {
+        left: 2px !important;
+        right: 2px !important;
+    }
+    &::before {
+        left: 2px !important;
+        right: 2px !important;
+    }
+}

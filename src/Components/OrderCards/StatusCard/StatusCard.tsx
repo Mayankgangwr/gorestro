@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Styles from "./StatusCard.module.scss";
-import Flex, { AlignItems, JustifyContent } from "../../Flex/Flex";
-import moment from "moment";
+import Flex, {  } from "../../Flex/Flex";
+import { ArrowRightRegular } from "@fluentui/react-icons";
 export interface IStatusCard {
     id?: string;
     username?: string;
@@ -24,27 +24,23 @@ const StatusCard: FC<IStatusCardProps> = ({
     username,
     tableNo,
     items,
-    amount,
-    status}) => {
+    status }) => {
     return (
         <div
-            className={`${Styles.OrderDetails} ${className} ${status === "pending" ? `${Styles.IsPending}` : status === "progress" ? `${Styles.IsProgress}` : status === "completed" ? `${Styles.IsCompleted}` : ``}`}
-            onClick={() => onClick && onClick()}>
+            className={`${Styles.OrderDetails1} ${className}`}>
             <Flex className={Styles.Header}>
                 <span className={Styles.Id}>
-                    {id} 
-                    <span className={Styles.TableNo}>{`Table-${tableNo}`}</span></span>
-                <span className={Styles.Items}>{`Items: ${items}`}</span>
+                    #{id}</span>
+                <span className={Styles.TableNo}>{`Table-${tableNo}`}</span>
             </Flex>
-
-            <Flex className={Styles.Footer}>
-                <Flex className="gap-1" alignItems={AlignItems.CENTER} justifyContent={JustifyContent.START}>
-                    <span className={Styles.OrderdBy}>Order by :</span>
-                    <span className={Styles.OrderByName}>{username}<span className={Styles.Time}>{`(${moment().format("hh:mm A")})`}</span></span>
-                </Flex>
-                <span className={Styles.Amount}>${amount}.00</span>
+            <Flex className="px-1">
+                <div className={Styles.OrderByName}><span className=" !text-gray-700 !font-medium">Client Name: </span>{username}</div>
+                <span className={Styles.TimeAgo}>{`10 minutes Ago`}</span>
             </Flex>
-
+            <Flex onClick={() => onClick && onClick()} className={`${Styles.Footer} ${status === "pending" ? `${Styles.IsPending}` : status === "progress" ? `${Styles.IsProgress}` : status === "completed" ? `${Styles.IsCompleted}` : ``}`}>
+                <div className={Styles.Status}>{status}</div>
+                <div className={Styles.Items}>{items} items<span className="pl-1"><ArrowRightRegular /></span></div>
+            </Flex>
         </div>
     );
 };

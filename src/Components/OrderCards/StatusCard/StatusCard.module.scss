@@ -28,7 +28,8 @@
 
             >.OrderByName {
                 @apply block text-base font-semibold;
-                >.Time{
+
+                >.Time {
                     @apply text-gray-900 pl-1;
                     font-size: 12px !important;
                     font-weight: 400 !important;
@@ -42,13 +43,14 @@
         }
     }
 }
+
 .IsProgress {
     @apply bg-orange-400;
 }
 
 .IsCompleted {
-    @apply bg-[#879fff];
-    
+    @apply bg-[#006be9];
+
 }
 
 .IsPending,
@@ -62,5 +64,75 @@
 
     >.Footer div .OrderdBy {
         @apply text-gray-900;
+    }
+}
+
+
+
+
+.OrderDetails1 {
+    @apply shadow-md shadow-gray-200 p-2 w-full bg-white rounded-lg;
+
+    >.Header {
+        >.Id {
+            @apply flex items-center;
+            line-height: 0%;
+        }
+
+        >.TableNo {
+            @apply block text-[12px] font-normal ml-2 px-2 py-[2px] rounded-lg border border-gray-300 bg-gray-200;
+            line-height: 16px;
+        }
+
+
+    }
+
+    >.OrderByName {
+        @apply block text-lg font-semibold pt-1;
+    }
+
+    >.TimeAgo {
+        @apply block text-[12px] font-normal ml-2 px-2 py-[2px] rounded-lg border border-gray-300 bg-gray-200;
+        line-height: 16px;
+    }
+
+    >.Footer {
+        @apply shadow-md shadow-gray-200 pt-[2px] pb-1 px-4 mt-2 w-full bg-gray-200 rounded-2xl;
+
+        >.Status {
+            @apply block text-lg font-normal capitalize;
+        }
+
+        .Items {
+            @apply block text-lg font-normal;
+        }
+
+        &:hover {
+            background-color: #879fff;
+        }
+
+        &.IsProgress {
+            background-color: rgb(251 146 60 / var(--tw-bg-opacity)) !important;
+        }
+
+        &.IsProgress:hover {
+            background-color: #faaa69 !important;
+        }
+
+        &.IsCompleted {
+            background-color: #006be9 !important;
+
+            .Status {
+                color: #f3f4f6 !important;
+            }
+
+            .Items {
+                color: #f3f4f6 !important;
+            }
+        }
+
+        &.IsCompleted:hover {
+            background-color: #879fff !important;
+        }
     }
 }

@@ -1,17 +1,17 @@
 .MobileLayout {
-    @apply md:hidden;
+    @apply lg:hidden;
 }
 
 .DesktopLayout {
-    @apply hidden md:flex w-full h-full;
+    @apply hidden lg:flex w-full h-full;
 
     >.Sidebar {
-        @apply md:w-[25%] lg:w-[13%] shadow-sm;
+        @apply md:w-[25%] lg:w-[18%] xl:w-[13%] shadow-sm;
         height: 100vh;
     }
 
     >.DesktopHeader {
-        @apply md:w-[75%] lg:w-[87%] h-full;
+        @apply md:w-[75%] lg:w-[82%] xl:w-[87%] h-full;
     }
 }
 
