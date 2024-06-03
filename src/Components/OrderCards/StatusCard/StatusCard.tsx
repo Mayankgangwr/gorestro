@@ -33,7 +33,7 @@ const StatusCard: FC<IStatusCardProps> = ({
                     #{id}</span>
                 <span className={Styles.TableNo}>{`Table-${tableNo}`}</span>
             </Flex>
-            <Flex className="px-1">
+            <Flex className="mt-2 px-1">
                 <div className={Styles.OrderByName}><span className=" !text-gray-700 !font-medium">Client Name: </span>{username}</div>
                 <span className={Styles.TimeAgo}>{`10 minutes Ago`}</span>
             </Flex>

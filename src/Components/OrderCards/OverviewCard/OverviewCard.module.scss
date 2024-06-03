@@ -41,7 +41,7 @@
 .MobleCard{
     @apply shadow-md shadow-gray-200 p-2 md:p-[10px] lg:p-3 xl:p-4 h-fit w-full bg-white rounded-lg;
     >.Header {
-        @apply text-gray-600 text-xs font-normal pb-2;
+        @apply text-gray-600 text-xs md:text-base  xl:text-xl font-medium xl:font-semibold pb-2;
     }
     >.Content {
         @apply gap-2 inline;

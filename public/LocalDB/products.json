@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "restroId": "1",
+        "name": "Margherita Pizza",
+        "description": "Delicious pizza topped with tomato, mozzarella, and basil leaves.",
+        "price": 10.99,
+        "category": "Pizza",
+        "image": "margherita_pizza.jpg",
+        "status": true
+    },
+    {
+        "id": "2",
+        "restroId": "1",
+        "name": "Spaghetti Carbonara",
+        "description": "Classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper.",
+        "price": 12.99,
+        "category": "Pasta",
+        "image": "spaghetti_carbonara.jpg",
+        "status": true
+    },
+    {
+        "id": "3",
+        "restroId": "2",
+        "name": "Chicken Caesar Salad",
+        "description": "Fresh salad with grilled chicken, romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
+        "price": 8.99,
+        "category": "Salad",
+        "image": "chicken_caesar_salad.jpg",
+        "status": true
+    },
+    {
+        "id": "4",
+        "restroId": "2",
+        "name": "Cheeseburger",
+        "description": "Juicy beef patty topped with cheese, lettuce, tomato, and onion in a sesame seed bun.",
+        "price": 9.99,
+        "category": "Burger",
+        "image": "cheeseburger.jpg",
+        "status": true
+    },
+    {
+        "id": "5",
+        "restroId": "3",
+        "name": "Sushi Platter",
+        "description": "Assorted sushi rolls with fresh fish, rice, and vegetables.",
+        "price": 15.99,
+        "category": "Sushi",
+        "image": "sushi_platter.jpg",
+        "status": true
+    },
+    {
+        "id": "6",
+        "restroId": "3",
+        "name": "Pad Thai",
+        "description": "Traditional Thai stir-fried rice noodles with shrimp, tofu, peanuts, and bean sprouts.",
+        "price": 11.99,
+        "category": "Thai",
+        "image": "pad_thai.jpg",
+        "status": true
+    },
+    {
+        "id": "7",
+        "restroId": "4",
+        "name": "Mushroom Risotto",
+        "description": "Creamy risotto cooked with Arborio rice, mushrooms, garlic, and parmesan cheese.",
+        "price": 13.99,
+        "category": "Italian",
+        "image": "mushroom_risotto.jpg",
+        "status": true
+    }
+]

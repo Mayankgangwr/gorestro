@@ -18,7 +18,9 @@ const Layout = () => {
                 </div>
                 <div className={Styles.DesktopHeader}>
                     <DesktopHeader />
-                    <Outlet />
+                    <div className="mt-[76px]">
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </>

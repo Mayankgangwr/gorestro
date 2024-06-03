@@ -1,31 +1,20 @@
 import Styles from "./Table.module.scss";
-import { Avatar, Menu, MenuItem, MenuList, MenuPopover, MenuTrigger, PresenceBadgeStatus, Table, TableBody, TableCell, TableCellLayout, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
-import { IEmployee } from "../../../Models";
-import { useSelector } from "react-redux";
-import moment from "moment";
+import { Menu, MenuItem, MenuList, MenuPopover, MenuTrigger, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
 import { MoreVerticalFilled } from "@fluentui/react-icons";
 import Pagination from "../../Pagination/Pagination";
 import Flex, { JustifyContent } from "../../Flex/Flex";
-const columns = [
-    { columnKey: "name", label: "Name" },
-    { columnKey: "position", label: "Position" },
-    { columnKey: "phoneNumber", label: "Phone No." },
-    { columnKey: "shift", label: "Shift" },
-    { columnKey: "workTiming", label: "Work timing" },
-    { columnKey: "action", label: "" },
-];
+import { FC } from "react";
 
 
-const TeamsTable = () => {
-    const teams = useSelector((state: any) => state.team.employees);
-    console.log(teams);
+const TeamsTable: FC<any> = ({ columns, items }) => {
+
     return (
         <div className={Styles.Container}>
             <div className={Styles.TableBorder}>
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            {columns.map((column) => (
+                            {columns.map((column: any) => (
                                 <TableHeaderCell className={`!text-gray-700 !font-semibold !text-center text-lg ${column.columnKey === "action" && `w-14`} ${column.columnKey === "name" && `!pl-5`}`} key={column.columnKey}>
                                     {column.label}
                                 </TableHeaderCell>
@@ -33,43 +22,28 @@ const TeamsTable = () => {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-
-                        {teams && teams.map((item: IEmployee) => (
-                            <TableRow>
-                                <TableCell>
-                                    <TableCellLayout
-                                        media={
-                                            <Avatar
-                                                aria-label={item.name}
-                                                name={item.name}
-                                                badge={{
-                                                    status: item.isLoggedIn as PresenceBadgeStatus,
-                                                }}
-                                            />
-                                        }
-                                    >
-                                        {item.name}
-                                    </TableCellLayout>
-                                </TableCell>
-                                <TableCell>{item.position}</TableCell>
-                                <TableCell>{item.phoneNumber}</TableCell>
-                                <TableCell>{item.shift}</TableCell>
-                                <TableCell>{(item.loggedOut === "" && item.loggedAt === "") ? "Out of office" : `${moment(item.loggedAt).format("HH:mm:ss A")} to ${item.loggedOut ? moment(item.loggedOut).format("HH:mm:ss A") : "Available"}`}</TableCell>
-                                <TableCell className="text-center">
-                                    <Menu>
-                                        <MenuTrigger disableButtonEnhancement>
-                                            <MoreVerticalFilled fontSize={20} />
-                                        </MenuTrigger>
-                                        <MenuPopover>
-                                            <MenuList>
-                                                <MenuItem>Edit</MenuItem>
-                                                <MenuItem>Delete</MenuItem>
-                                            </MenuList>
-                                        </MenuPopover>
-                                    </Menu>
-                                </TableCell>
-                            </TableRow>
-                        ))}
+                        {items && items.map((item: any) => {
+                            return (
+                                <TableRow>
+                                    {Object.keys(item).map((key: string) => (
+                                       key!=="id" && <TableCell className={key==="name" ? ` w-52` : "pl-2"}>{item[key]}</TableCell>
+                                    ))}
+                                    <TableCell>
+                                        <Menu>
+                                            <MenuTrigger disableButtonEnhancement>
+                                                <MoreVerticalFilled fontSize={20} />
+                                            </MenuTrigger>
+                                            <MenuPopover>
+                                                <MenuList>
+                                                    <MenuItem>Edit</MenuItem>
+                                                    <MenuItem>Delete</MenuItem>
+                                                </MenuList>
+                                            </MenuPopover>
+                                        </Menu>
+                                    </TableCell>
+                                </TableRow>
+                            )
+                        })}
                     </TableBody>
                 </Table>
             </div>

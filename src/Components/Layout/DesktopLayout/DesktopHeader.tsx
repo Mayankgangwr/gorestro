@@ -4,10 +4,25 @@ import { Text, Persona } from "@fluentui/react-components";
 import moment from "moment";
 import InputField from "../../DataFields/InputField";
 import { AlertFilled, WeatherMoonRegular, WeatherSunnyFilled } from "@fluentui/react-icons";
+import { useEffect, useState } from "react";
 
 const DesktopHeader = () => {
+    const [hasShadow, setHasShadow] = useState(false);
+    useEffect(() => {
+        function handleScroll() {
+            if (window.scrollY > 76) {
+                setHasShadow(true);
+            } else {
+                setHasShadow(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
-        <Flex className={Styles.Container} direction={FlexDirection.ROW} alignItems={AlignItems.CENTER} justifyContent={JustifyContent.BETWEEN} flexWrap={FlexWrap.WRAP}>
+        <Flex className={`${Styles.Container} ${hasShadow  && Styles.Scrolled}`} direction={FlexDirection.ROW} alignItems={AlignItems.CENTER} justifyContent={JustifyContent.BETWEEN} flexWrap={FlexWrap.WRAP}>
             <Flex direction={FlexDirection.COLUMN} alignItems={AlignItems.START} justifyContent={JustifyContent.CENTER}>
                 <Text className={Styles.Header}>Dashboard</Text>
                 <Text className={Styles.Time}>{moment().format("Do MMM YYYY")}</Text>
@@ -32,7 +47,7 @@ const DesktopHeader = () => {
                     <WeatherMoonRegular fontSize={32} />
                 </Flex>
                 <div className={Styles.AlertMessage}><AlertFilled fontSize={32} /></div>
-                <Persona name="Prince Kurmi" textAlignment="center" size="extra-large"/>
+                <Persona name="Prince Kurmi" textAlignment="center" size="extra-large" />
             </Flex>
         </Flex>
     );

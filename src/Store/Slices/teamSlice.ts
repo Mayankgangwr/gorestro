@@ -12,7 +12,6 @@ const teamSlice = createSlice({
     initialState,
     reducers: {
         setEmployee: (state, action: PayloadAction<IEmployee[] | []>) => {
-
             state.employees = action.payload;
         },
         createEmployee: (state, action: PayloadAction<IEmployee>) => {

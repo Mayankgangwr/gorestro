@@ -8,6 +8,8 @@ import teamController from "./DataProvider/Controllers/TeamController";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setEmployee } from "./Store/Slices/teamSlice";
+import productsController from './DataProvider/Controllers/ProductsController';
+import { setProduct } from './Store/Slices/productSlice';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -97,12 +99,12 @@ export default function App() {
       setTheme(Theme.Light);
     }
   }
-  const fetchTeams = async () => {
+  const fetchInitialData = async () => {
     try {
-      const response: any = await teamController.getTeams();
-      if (response) {
-        dispatch(setEmployee(response));
-      }
+      const teams: any = await teamController.getTeams();
+      const products: any = await productsController.getProducts();
+      teams && dispatch(setEmployee(teams));
+      products && dispatch(setProduct(products));
     } catch (error) {
       throw error;
     } finally {
@@ -110,7 +112,7 @@ export default function App() {
     }
   }
   useEffect(() => {
-    fetchTeams();
+    fetchInitialData();
     handleTheme();
   }, []);
 
